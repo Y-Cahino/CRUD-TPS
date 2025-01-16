@@ -9,8 +9,18 @@ using System.Xml;
 
 class Program
 {
-    static void Main(string[args])
+    static void Main(string[] args)
     {
-
+        FileData system = new FileData("data.json");
+        string userId = Prompt.ShowDialog("Enter User ID:", "Login");
+        string password = Prompt.ShowDialog("Enter Password:", "Login");
+        if (system.Login(userId, password))
+        {
+            Console.WriteLine("Login successful");
+        }
+        else (Console.WriteLine("Login Failed"));
     }
+
+   
+    
 }
